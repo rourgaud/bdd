@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=opsearch'
+      username: sig
+      password: sig

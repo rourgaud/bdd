@@ -1,0 +1,320 @@
+graph G {
+	edge [ len=2 labeldistance=2 ];
+	overlap=false;
+	splines=true;
+
+	nodeCandidat [
+		label="{<table>Candidat|<cols>civilite_id (integer)\lnom (string)\lprenom (string)\ltellignedirecte (string)\ltelstandard (string)\ltelmobilepro (string)\ltelmobileperso (string)\lteldomicile (string)\lemail (string)\ldatenaissance (date)\ldateexperience (date)\lcommentaire (string)\lcommentairechargerecherche (string)\lcompetencesinformatiques (string)\lcv (string)\ldossier (string)\lsource (string)\lplace (integer)\lvalid (integer)}",
+		shape=record ];
+	nodeCouleurs [
+		label="{<table>Couleurs|<cols>valeur (string)}",
+		shape=record ];
+	nodeCritereLibre [
+		label="{<table>CritereLibre|<cols>libelle (string)}",
+		shape=record ];
+	nodeCritereLibreCandidat [
+		label="{<table>CritereLibreCandidat|<cols>valide (integer)}",
+		shape=record ];
+	nodeCtrlCivilite [
+		label="{<table>CtrlCivilite|<cols>libelle (string)}",
+		shape=record ];
+	nodeCtrlStatut [
+		label="{<table>CtrlStatut|<cols>libelle (string)}",
+		shape=record ];
+	nodeCtrlStatutMission [
+		label="{<table>CtrlStatutMission|<cols>libelle (string)\lordre (integer)}",
+		shape=record ];
+	nodeFeuilleCheck [
+		label="{<table>FeuilleCheck|<cols>critere (string)\lvaleur (string)\lordre (integer)}",
+		shape=record ];
+	nodeFormation [
+		label="{<table>Formation|<cols>niveauformation (string)\lecole (string)\lville (string)\lpays (string)\ldatediplome (date)\lcommentaire (string)}",
+		shape=record ];
+	nodeGroupe [
+		label="{<table>Groupe|<cols>libelle (string)}",
+		shape=record ];
+	nodeMission [
+		label="{<table>Mission|<cols>client (string)\lintituleposte (string)\lsecteur (string)\lzonegeographique (string)\lfonction (string)\lniveauformation (string)\lremunerationmin (float)\lremunerationmax (float)\lagemin (integer)\lagemax (integer)\lexperiencemin (integer)\lexperiencemax (integer)\ldatedebut (date)\ldatefin (date)\lnbcandidats (integer)\lcommentaire (string)\lstatut_mission_id (integer)}",
+		shape=record ];
+	nodeMotsCandidat [
+		label="{<table>MotsCandidat|<cols>poids (integer)}",
+		shape=record ];
+	nodeMotsFormation [
+		label="{<table>MotsFormation|<cols>poids (integer)}",
+		shape=record ];
+	nodeMotsParcour [
+		label="{<table>MotsParcour|<cols>poids (integer)}",
+		shape=record ];
+	nodeParcour [
+		label="{<table>Parcour|<cols>societe (string)\leffectifsociete (integer)\lzonegeographique (string)\lfonction (string)\lintitule (string)\lsecteur (string)\lremuneration (float)\ldetailremuneration (string)\ldatedebut (date)\ldatefin (date)\lcommentaire (string)}",
+		shape=record ];
+	nodeTableauChasse [
+		label="{<table>TableauChasse|<cols>contactepar (string)\lcontactele (date)\lcommentairecontact (string)\lrencontrepar (string)\lrencontrele (date)\lcommentairerencontre (string)\lcommentaire (string)\lcriteres_specifiques (string)\lctrl_statut_id (integer)\lshortliste (integer)\lcoutextesociete (string)\lcoufondsociete (string)\lcoutextecandidat (string)\lcoufondcandidat (string)}",
+		shape=record ];
+	nodeTache [
+		label="{<table>Tache|<cols>titre (string)\lcommentaire (string)\laffecte_le (date)}",
+		shape=record ];
+	nodeUtilisateur [
+		label="{<table>Utilisateur|<cols>username (string)\lpassword (string)\lnom (string)\lprenom (string)\lcreatedat (date)}",
+		shape=record ];
+
+	nodeAffecteMission [
+		label="{<table>AffecteMission|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlFonction [
+		label="{<table>CtrlFonction|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlLangue [
+		label="{<table>CtrlLangue|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlNiveauFormation [
+		label="{<table>CtrlNiveauFormation|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlSecteur [
+		label="{<table>CtrlSecteur|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlSource [
+		label="{<table>CtrlSource|<cols>}",
+		shape=Mrecord ];
+	nodeCtrlZoneGeographique [
+		label="{<table>CtrlZoneGeographique|<cols>}",
+		shape=Mrecord ];
+	nodeLangueCandidat [
+		label="{<table>LangueCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeMots [
+		label="{<table>Mots|<cols>}",
+		shape=Mrecord ];
+	nodeUserGroup [
+		label="{<table>UserGroup|<cols>}",
+		shape=Mrecord ];
+	nodeCandidat [
+		label="{<table>Candidat|<cols>}",
+		shape=Mrecord ];
+	nodeCritereLibreMission [
+		label="{<table>CritereLibreMission|<cols>}",
+		shape=Mrecord ];
+	nodeCritereLibre [
+		label="{<table>CritereLibre|<cols>}",
+		shape=Mrecord ];
+	nodeCritereLibreCandidatCandidat [
+		label="{<table>CritereLibreCandidatCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeCritereLibreCandidatCritereLibre [
+		label="{<table>CritereLibreCandidatCritereLibre|<cols>}",
+		shape=Mrecord ];
+	nodeFeuilleCheckMission [
+		label="{<table>FeuilleCheckMission|<cols>}",
+		shape=Mrecord ];
+	nodeFormationCandidat [
+		label="{<table>FormationCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeFormation [
+		label="{<table>Formation|<cols>}",
+		shape=Mrecord ];
+	nodeGroupe [
+		label="{<table>Groupe|<cols>}",
+		shape=Mrecord ];
+	nodeMission [
+		label="{<table>Mission|<cols>}",
+		shape=Mrecord ];
+	nodeMotsCandidatCandidat [
+		label="{<table>MotsCandidatCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeMotsCandidatMots [
+		label="{<table>MotsCandidatMots|<cols>}",
+		shape=Mrecord ];
+	nodeMotsFormationFormation [
+		label="{<table>MotsFormationFormation|<cols>}",
+		shape=Mrecord ];
+	nodeMotsFormationMots [
+		label="{<table>MotsFormationMots|<cols>}",
+		shape=Mrecord ];
+	nodeMotsParcourParcour [
+		label="{<table>MotsParcourParcour|<cols>}",
+		shape=Mrecord ];
+	nodeMotsParcourMots [
+		label="{<table>MotsParcourMots|<cols>}",
+		shape=Mrecord ];
+	nodeParcourCandidat [
+		label="{<table>ParcourCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeParcour [
+		label="{<table>Parcour|<cols>}",
+		shape=Mrecord ];
+	nodeTableauChasseMission [
+		label="{<table>TableauChasseMission|<cols>}",
+		shape=Mrecord ];
+	nodeTableauChasseCandidat [
+		label="{<table>TableauChasseCandidat|<cols>}",
+		shape=Mrecord ];
+	nodeTacheUtilisateur [
+		label="{<table>TacheUtilisateur|<cols>}",
+		shape=Mrecord ];
+	nodeUtilisateur [
+		label="{<table>Utilisateur|<cols>}",
+		shape=Mrecord ];
+
+	nodeAffecteMission -- nodeMission [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeAffecteMission -- nodeUtilisateur [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeLangueCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeLangueCandidat -- nodeCtrlLangue [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeUserGroup -- nodeUtilisateur [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeUserGroup -- nodeGroupe [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeCritereLibreCandidat [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeFormation [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeLangueCandidat [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeMotsCandidat [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeParcour [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCandidat -- nodeTableauChasse [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCritereLibreMission -- nodeMission [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeCritereLibre -- nodeCritereLibreCandidat [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeCritereLibreCandidatCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeCritereLibreCandidatCritereLibre -- nodeCritereLibre [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeFeuilleCheckMission -- nodeMission [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeFormationCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeFormation -- nodeMotsFormation [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeGroupe -- nodeUserGroup [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeMission -- nodeAffecteMission [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeMission -- nodeCritereLibre [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeMission -- nodeFeuilleCheck [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeMission -- nodeTableauChasse [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeMotsCandidatCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeMotsCandidatMots -- nodeMots [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeMotsFormationFormation -- nodeFormation [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeMotsFormationMots -- nodeMots [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeMotsParcourParcour -- nodeParcour [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeMotsParcourMots -- nodeMots [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeParcourCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeParcour -- nodeMotsParcour [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeTableauChasseMission -- nodeMission [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeTableauChasseCandidat -- nodeCandidat [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeTacheUtilisateur -- nodeUtilisateur [
+		headlabel="0,n",
+		label="",
+		labeldistance=3 ];
+	nodeTacheUtilisateur -- nodeUtilisateur [
+		headlabel="0,n",
+		label="(Utilisateur_2)",
+		labeldistance=3 ];
+	nodeUtilisateur -- nodeAffecteMission [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeUtilisateur -- nodeTache [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+	nodeUtilisateur -- nodeTache [
+		headlabel="0,1",
+		label="(Tache_2)",
+		labeldistance=3 ];
+	nodeUtilisateur -- nodeUserGroup [
+		headlabel="0,1",
+		label="",
+		labeldistance=3 ];
+
+
+}

@@ -1,0 +1,52 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: stat, action: index }
+  
+plaquetteMetier:
+  url:   /statistiques/plaquette-metier.html
+  param: { module: stat, action: plaquetteMetier }
+
+plaquetteMetierSubmit:
+  url:   /statistiques/plaquette-metier.html
+  param: { module: stat, action: plaquetteMetier }
+  
+plaquetteMetierPreview:
+  url:   /statistiques/plaquette-metier/apercu.html
+  param: { module: stat, action: plaquetteMetierPreview }
+
+plaquetteSecteur:
+  url:   /statistiques/plaquette-secteur.html
+  param: { module: stat, action: plaquetteSecteur }
+
+plaquetteSecteurSubmit:
+  url:   /statistiques/plaquette-secteur.html
+  param: { module: stat, action: plaquetteSecteur }
+
+plaquetteSecteurPreview:
+  url:   /statistiques/plaquette-secteur/apercu.html
+  param: { module: stat, action: plaquetteSecteurPreview }
+
+reportingMission:
+  url:   /statistiques/reporting-mission.html
+  param: { module: stat, action: reportingMission }
+
+reportingMissionSubmit:
+  url:   /statistiques/reporting-mission.html
+  param: { module: stat, action: reportingMission }
+
+reportingMissionPreview:
+  url:   /statistiques/reporting-mission/apercu.html
+  param: { module: stat, action: reportingMissionPreview }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

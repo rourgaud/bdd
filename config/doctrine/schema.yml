@@ -1,0 +1,1433 @@
+AffecteMission:
+  connection: doctrine
+  tableName: affecte_mission
+  columns:
+    mission_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    utilisateur_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    Mission:
+      local: mission_id
+      foreign: id
+      type: one
+    Utilisateur:
+      local: utilisateur_id
+      foreign: id
+      type: one
+Candidat:
+  connection: doctrine
+  tableName: candidat
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    civilite_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    nom:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    prenom:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    tellignedirecte:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    telstandard:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    telmobilepro:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    telmobileperso:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    teldomicile:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    email:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    datenaissance:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    dateexperience:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    commentairechargerecherche:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    competencesinformatiques:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    cv:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    dossier:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    source:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    place:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    valid:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '1'
+      notnull: true
+      autoincrement: false
+  relations:
+    CritereLibreCandidat:
+      local: id
+      foreign: candidat_id
+      type: many
+    Formation:
+      local: id
+      foreign: candidat_id
+      type: many
+    LangueCandidat:
+      local: id
+      foreign: candidat_id
+      type: many
+    MotsCandidat:
+      local: id
+      foreign: candidat_id
+      type: many
+    Parcour:
+      local: id
+      foreign: candidat_id
+      type: many
+    TableauChasse:
+      local: id
+      foreign: candidat_id
+      type: many
+Couleurs:
+  connection: doctrine
+  tableName: couleurs
+  columns:
+    id:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    valeur:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+CritereLibre:
+  connection: doctrine
+  tableName: critere_libre
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    mission_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Mission:
+      local: mission_id
+      foreign: id
+      type: one
+    CritereLibreCandidat:
+      local: id
+      foreign: critere_libre_id
+      type: many
+CritereLibreCandidat:
+  connection: doctrine
+  tableName: critere_libre_candidat
+  columns:
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    critere_libre_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    valide:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+    CritereLibre:
+      local: critere_libre_id
+      foreign: id
+      type: one
+CtrlCivilite:
+  connection: doctrine
+  tableName: ctrl_civilite
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+CtrlFonction:
+  connection: doctrine
+  tableName: ctrl_fonction
+  columns:
+    fonction:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+CtrlLangue:
+  connection: doctrine
+  tableName: ctrl_langue
+  columns:
+    langue:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    LangueCandidat:
+      local: langue
+      foreign: langue
+      type: many
+CtrlNiveauFormation:
+  connection: doctrine
+  tableName: ctrl_niveau_formation
+  columns:
+    niveauformation:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+CtrlSecteur:
+  connection: doctrine
+  tableName: ctrl_secteur
+  columns:
+    secteur:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+CtrlSource:
+  connection: doctrine
+  tableName: ctrl_source
+  columns:
+    source:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+CtrlStatut:
+  connection: doctrine
+  tableName: ctrl_statut
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+CtrlStatutMission:
+  connection: doctrine
+  tableName: ctrl_statut_mission
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    ordre:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+CtrlZoneGeographique:
+  connection: doctrine
+  tableName: ctrl_zone_geographique
+  columns:
+    zonegeographique:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+FeuilleCheck:
+  connection: doctrine
+  tableName: feuille_check
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    critere:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    valeur:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    ordre:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    mission_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Mission:
+      local: mission_id
+      foreign: id
+      type: one
+Formation:
+  connection: doctrine
+  tableName: formation
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    niveauformation:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    ecole:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    ville:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    pays:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    datediplome:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+    MotsFormation:
+      local: id
+      foreign: formation_id
+      type: many
+Groupe:
+  connection: doctrine
+  tableName: groupe
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    libelle:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    UserGroup:
+      local: id
+      foreign: groupe_id
+      type: many
+LangueCandidat:
+  connection: doctrine
+  tableName: langue_candidat
+  columns:
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    langue:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+    CtrlLangue:
+      local: langue
+      foreign: langue
+      type: one
+Mission:
+  connection: doctrine
+  tableName: mission
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    client:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    intituleposte:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    secteur:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    zonegeographique:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    fonction:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    niveauformation:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    remunerationmin:
+      type: float()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    remunerationmax:
+      type: float()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    agemin:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    agemax:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    experiencemin:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    experiencemax:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    datedebut:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    datefin:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    nbcandidats:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    statut_mission_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '1'
+      notnull: true
+      autoincrement: false
+  relations:
+    AffecteMission:
+      local: id
+      foreign: mission_id
+      type: many
+    CritereLibre:
+      local: id
+      foreign: mission_id
+      type: many
+    FeuilleCheck:
+      local: id
+      foreign: mission_id
+      type: many
+    TableauChasse:
+      local: id
+      foreign: mission_id
+      type: many
+Mots:
+  connection: doctrine
+  tableName: mots
+  columns:
+    mot:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    MotsCandidat:
+      local: mot
+      foreign: mot
+      type: many
+    MotsFormation:
+      local: mot
+      foreign: mot
+      type: many
+    MotsParcour:
+      local: mot
+      foreign: mot
+      type: many
+MotsCandidat:
+  connection: doctrine
+  tableName: mots_candidat
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    mot:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    poids:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+    Mots:
+      local: mot
+      foreign: mot
+      type: one
+MotsFormation:
+  connection: doctrine
+  tableName: mots_formation
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    mot:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    formation_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    poids:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Formation:
+      local: formation_id
+      foreign: id
+      type: one
+    Mots:
+      local: mot
+      foreign: mot
+      type: one
+MotsParcour:
+  connection: doctrine
+  tableName: mots_parcour
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    mot:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    parcour_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    poids:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Parcour:
+      local: parcour_id
+      foreign: id
+      type: one
+    Mots:
+      local: mot
+      foreign: mot
+      type: one
+Parcour:
+  connection: doctrine
+  tableName: parcour
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    societe:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    effectifsociete:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    zonegeographique:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    fonction:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    intitule:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    secteur:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    remuneration:
+      type: float()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    detailremuneration:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    datedebut:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    datefin:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+    MotsParcour:
+      local: id
+      foreign: parcour_id
+      type: many
+TableauChasse:
+  connection: doctrine
+  tableName: tableau_chasse
+  columns:
+    mission_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    candidat_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    contactepar:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    contactele:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    commentairecontact:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    rencontrepar:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    rencontrele:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    commentairerencontre:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    criteres_specifiques:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    ctrl_statut_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    shortliste:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    coutextesociete:
+      type: string(6)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '000000'
+      notnull: true
+      autoincrement: false
+    coufondsociete:
+      type: string(6)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ffffff
+      notnull: true
+      autoincrement: false
+    coutextecandidat:
+      type: string(6)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '000000'
+      notnull: true
+      autoincrement: false
+    coufondcandidat:
+      type: string(6)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ffffff
+      notnull: true
+      autoincrement: false
+  relations:
+    Mission:
+      local: mission_id
+      foreign: id
+      type: one
+    Candidat:
+      local: candidat_id
+      foreign: id
+      type: one
+Tache:
+  connection: doctrine
+  tableName: tache
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    titre:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    commentaire:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    affecte_le:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+    affecte_a_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    affecte_par_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+  relations:
+    Utilisateur:
+      local: affecte_a_id
+      foreign: id
+      type: one
+    Utilisateur_2:
+      class: Utilisateur
+      local: affecte_par_id
+      foreign: id
+      type: one
+UserGroup:
+  connection: doctrine
+  tableName: user_group
+  columns:
+    utilisateur_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    groupe_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+  relations:
+    Utilisateur:
+      local: utilisateur_id
+      foreign: id
+      type: one
+    Groupe:
+      local: groupe_id
+      foreign: id
+      type: one
+Utilisateur:
+  connection: doctrine
+  tableName: utilisateur
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    username:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    password:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    nom:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    prenom:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    createdat:
+      type: date(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: '0000-00-00'
+      notnull: true
+      autoincrement: false
+  relations:
+    AffecteMission:
+      local: id
+      foreign: utilisateur_id
+      type: many
+    Tache:
+      local: id
+      foreign: affecte_a_id
+      type: many
+    Tache_2:
+      class: Tache
+      local: id
+      foreign: affecte_par_id
+      type: many
+    UserGroup:
+      local: id
+      foreign: utilisateur_id
+      type: many
+
+# opsearch stat
+PlaquetteMetier:
+  connection: doctrine
+  tableName: plaquette_metier
+  actAs: { Timestampable: ~ }
+  columns:
+    intitule_post:             { type: clob, notnull:true }
+    nb_candidat:               { type: integer }
+    rem_moy:                   { type: integer }
+    rem_max:                   { type: integer }
+    id_cand_max:               { type: integer }
+    rem_min:                   { type: integer }
+    id_cand_min:               { type: integer }
+    secteur_pourcent:          { type: integer }
+    formation_pourcent:        { type: clob }
+    loc_pourcent:              { type: clob }
+    age_moy:                   { type: integer }
+    age_min:                   { type: integer }
+    age_max:                   { type: integer }
+    taux_reussite:             { type: integer }
+    commentaire:               { type: clob }
+    aff_intitule_post:         { type: boolean, default: 1 }
+    aff_nb_candidat:           { type: boolean, default: 1 }
+    aff_rem_moy:               { type: boolean, default: 1 }
+    aff_rem_max:               { type: boolean, default: 1 }
+    aff_age_cand_max:          { type: boolean, default: 1 }
+    aff_formation_cand_max:    { type: boolean, default: 1 }
+    aff_societe_prov_cand_max: { type: boolean, default: 1 }
+    aff_rem_min:               { type: boolean, default: 1 }
+    aff_age_cand_min:          { type: boolean, default: 1 }
+    aff_formation_cand_min:    { type: boolean, default: 1 }
+    aff_societe_prov_cand_min: { type: boolean, default: 1 }
+    aff_secteur_pourcent:      { type: boolean, default: 1 }
+    aff_formation_pourcent:    { type: boolean, default: 1 }
+    aff_loc_pourcent:          { type: boolean, default: 1 }
+    aff_age_moy:               { type: boolean, default: 1 }
+    aff_age_min:               { type: boolean, default: 1 }
+    aff_age_max:               { type: boolean, default: 1 }
+    aff_commentaire:           { type: boolean, default: 1 }
+    utilisateur_id:            { type: integer }
+    saved:                     { type: boolean, default: 0 }
+  relations:
+    Utilisateur:               { onDelete: CASCADE, local: utilisateur_id, foreign: id, foreignAlias: PlaquetteMetiers }
+
+PlaquetteSecteur:
+  connection: doctrine
+  tableName: plaquette_secteur
+  actAs: { Timestampable: ~ }
+  columns:
+    secteur:                   { type: clob, notnull:true }
+    nb_candidat:               { type: integer }
+    nb_societe:                { type: integer }
+    nb_mission:                { type: integer }
+    poste:                     { type: clob }
+    client:                    { type: clob }
+    mediane_salariale:         { type: integer }
+    loc_pourcent:              { type: clob }
+    taux_reussite:             { type: integer }
+    aff_secteur:               { type: boolean, default: 1 }
+    aff_nb_candidat:           { type: boolean, default: 1 }
+    aff_nb_societe:            { type: boolean, default: 1 }
+    aff_nb_mission:            { type: boolean, default: 1 }
+    aff_poste:                 { type: boolean, default: 1 }
+    aff_client:                { type: boolean, default: 1 }
+    aff_mediane_salariale:     { type: boolean, default: 1 }
+    aff_loc_pourcent:          { type: boolean, default: 1 }
+    aff_taux_reussite:         { type: boolean, default: 1 }
+    utilisateur_id:            { type: integer }
+    saved:                     { type: boolean, default: 0 }
+
+ReportingMission:
+  connection: doctrine
+  tableName: reporting_mission
+  actAs: { Timestampable: ~ }
+  columns:
+    mission_id:                { type: integer }
+    nb_candidat:               { type: integer }
+    nb_societe:                { type: integer }
+    rem_moy:                   { type: integer }
+    rem_max:                   { type: integer }
+    id_cand_max:               { type: integer }
+    rem_min:                   { type: integer }
+    id_cand_min:               { type: integer }
+    formation_pourcent:        { type: clob }
+    age_graph:                 { type: clob }
+    secteur_pourcent:          { type: clob }
+    loc_pourcent:              { type: clob }
+    sexe_pourcent:             { type: clob }
+    inoutbu_pourcent:          { type: clob }
+    mediane_salariale:         { type: integer }
+    rap_exp_rem:               { type: clob }
+    critere_spe:               { type: clob }
+    aff_mission_id:            { type: boolean, default: 1 }
+    aff_nb_candidat:           { type: boolean, default: 1 }
+    aff_nb_societe:            { type: boolean, default: 1 }
+    aff_rem_moy:               { type: boolean, default: 1 }
+    aff_rem_max:               { type: boolean, default: 1 }
+    aff_age_cand_max:          { type: boolean, default: 1 }
+    aff_formation_cand_max:    { type: boolean, default: 1 }
+    aff_societe_prov_cand_max: { type: boolean, default: 1 }
+    aff_rem_min:               { type: boolean, default: 1 }
+    aff_age_cand_min:          { type: boolean, default: 1 }
+    aff_formation_cand_min:    { type: boolean, default: 1 }
+    aff_societe_prov_cand_min: { type: boolean, default: 1 }
+    aff_formation_pourcent:    { type: boolean, default: 1 }
+    aff_age_graph:             { type: boolean, default: 1 }
+    aff_secteur_pourcent:      { type: boolean, default: 1 }
+    aff_loc_pourcent:          { type: boolean, default: 1 }
+    aff_sexe:                  { type: boolean, default: 1 }
+    aff_inoutbu_pourcent:      { type: boolean, default: 1 }
+    aff_mediane_salariale:     { type: boolean, default: 1 }
+    aff_rap_exp_rem:           { type: boolean, default: 1 }
+    aff_critere_spe:           { type: boolean, default: 1 }
+    utilisateur_id:            { type: integer }
+    saved:                     { type: boolean, default: 0 }
+  relations:
+    Mission:                   { onDelete: CASCADE, local: mission_id, foreign: id, foreignAlias: ReportingMissions }

@@ -1,0 +1,135 @@
+digraph G {
+	edge [ len=2 labeldistance=2 ];
+	overlap=false;
+	splines=true;
+
+	nodeaffecte_mission [
+		label="{<table>affecte_mission|<cols>mission_id (integer) [PK]\lutilisateur_id (integer) [PK]\l}",
+		shape=record ];
+	nodecandidat [
+		label="{<table>candidat|<cols>id (integer) [PK]\lcivilite_id (integer)\lnom (string)\lprenom (string)\ltellignedirecte (string)\ltelstandard (string)\ltelmobilepro (string)\ltelmobileperso (string)\lteldomicile (string)\lemail (string)\ldatenaissance (date)\ldateexperience (date)\lcommentaire (string)\lcommentairechargerecherche (string)\lcompetencesinformatiques (string)\lcv (string)\ldossier (string)\lsource (string)\lplace (integer)\lvalid (integer)\l}",
+		shape=record ];
+	nodecouleurs [
+		label="{<table>couleurs|<cols>id (string) [PK]\lvaleur (string)\l}",
+		shape=record ];
+	nodecritere_libre [
+		label="{<table>critere_libre|<cols>id (integer) [PK]\llibelle (string)\lmission_id (integer)\l}",
+		shape=record ];
+	nodecritere_libre_candidat [
+		label="{<table>critere_libre_candidat|<cols>candidat_id (integer) [PK]\lcritere_libre_id (integer) [PK]\lvalide (integer)\l}",
+		shape=record ];
+	nodectrl_civilite [
+		label="{<table>ctrl_civilite|<cols>id (integer) [PK]\llibelle (string)\l}",
+		shape=record ];
+	nodectrl_fonction [
+		label="{<table>ctrl_fonction|<cols>fonction (string) [PK]\l}",
+		shape=record ];
+	nodectrl_langue [
+		label="{<table>ctrl_langue|<cols>langue (string) [PK]\l}",
+		shape=record ];
+	nodectrl_niveau_formation [
+		label="{<table>ctrl_niveau_formation|<cols>niveauformation (string) [PK]\l}",
+		shape=record ];
+	nodectrl_secteur [
+		label="{<table>ctrl_secteur|<cols>secteur (string) [PK]\l}",
+		shape=record ];
+	nodectrl_source [
+		label="{<table>ctrl_source|<cols>source (string) [PK]\l}",
+		shape=record ];
+	nodectrl_statut [
+		label="{<table>ctrl_statut|<cols>id (integer) [PK]\llibelle (string)\l}",
+		shape=record ];
+	nodectrl_statut_mission [
+		label="{<table>ctrl_statut_mission|<cols>id (integer) [PK]\llibelle (string)\lordre (integer)\l}",
+		shape=record ];
+	nodectrl_zone_geographique [
+		label="{<table>ctrl_zone_geographique|<cols>zonegeographique (string) [PK]\l}",
+		shape=record ];
+	nodefeuille_check [
+		label="{<table>feuille_check|<cols>id (integer) [PK]\lcritere (string)\lvaleur (string)\lordre (integer)\lmission_id (integer)\l}",
+		shape=record ];
+	nodeformation [
+		label="{<table>formation|<cols>id (integer) [PK]\lcandidat_id (integer)\lniveauformation (string)\lecole (string)\lville (string)\lpays (string)\ldatediplome (date)\lcommentaire (string)\l}",
+		shape=record ];
+	nodegroupe [
+		label="{<table>groupe|<cols>id (integer) [PK]\llibelle (string)\l}",
+		shape=record ];
+	nodelangue_candidat [
+		label="{<table>langue_candidat|<cols>candidat_id (integer) [PK]\llangue (string) [PK]\l}",
+		shape=record ];
+	nodemission [
+		label="{<table>mission|<cols>id (integer) [PK]\lclient (string)\lintituleposte (string)\lsecteur (string)\lzonegeographique (string)\lfonction (string)\lniveauformation (string)\lremunerationmin (float)\lremunerationmax (float)\lagemin (integer)\lagemax (integer)\lexperiencemin (integer)\lexperiencemax (integer)\ldatedebut (date)\ldatefin (date)\lnbcandidats (integer)\lcommentaire (string)\lstatut_mission_id (integer)\l}",
+		shape=record ];
+	nodemots [
+		label="{<table>mots|<cols>mot (string) [PK]\l}",
+		shape=record ];
+	nodemots_candidat [
+		label="{<table>mots_candidat|<cols>id (integer) [PK]\lmot (string)\lcandidat_id (integer)\lpoids (integer)\l}",
+		shape=record ];
+	nodemots_formation [
+		label="{<table>mots_formation|<cols>id (integer) [PK]\lmot (string)\lformation_id (integer)\lpoids (integer)\l}",
+		shape=record ];
+	nodemots_parcour [
+		label="{<table>mots_parcour|<cols>id (integer) [PK]\lmot (string)\lparcour_id (integer)\lpoids (integer)\l}",
+		shape=record ];
+	nodeparcour [
+		label="{<table>parcour|<cols>id (integer) [PK]\lcandidat_id (integer)\lsociete (string)\leffectifsociete (integer)\lzonegeographique (string)\lfonction (string)\lintitule (string)\lsecteur (string)\lremuneration (float)\ldetailremuneration (string)\ldatedebut (date)\ldatefin (date)\lcommentaire (string)\l}",
+		shape=record ];
+	nodetableau_chasse [
+		label="{<table>tableau_chasse|<cols>mission_id (integer) [PK]\lcandidat_id (integer) [PK]\lcontactepar (string)\lcontactele (date)\lcommentairecontact (string)\lrencontrepar (string)\lrencontrele (date)\lcommentairerencontre (string)\lcommentaire (string)\lcriteres_specifiques (string)\lctrl_statut_id (integer)\lshortliste (integer)\lcoutextesociete (string)\lcoufondsociete (string)\lcoutextecandidat (string)\lcoufondcandidat (string)\l}",
+		shape=record ];
+	nodetache [
+		label="{<table>tache|<cols>id (integer) [PK]\ltitre (string)\lcommentaire (string)\laffecte_le (date)\laffecte_a_id (integer)\laffecte_par_id (integer)\l}",
+		shape=record ];
+	nodeuser_group [
+		label="{<table>user_group|<cols>utilisateur_id (integer) [PK]\lgroupe_id (integer) [PK]\l}",
+		shape=record ];
+	nodeutilisateur [
+		label="{<table>utilisateur|<cols>id (integer) [PK]\lusername (string)\lpassword (string)\lnom (string)\lprenom (string)\lcreatedat (date)\l}",
+		shape=record ];
+
+	nodeaffecte_mission:cols -> nodemission:table [
+		label="mission_id=id"];
+	nodeaffecte_mission:cols -> nodeutilisateur:table [
+		label="utilisateur_id=id"];
+	nodecritere_libre:cols -> nodemission:table [
+		label="mission_id=id"];
+	nodecritere_libre_candidat:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodecritere_libre_candidat:cols -> nodecritere_libre:table [
+		label="critere_libre_id=id"];
+	nodefeuille_check:cols -> nodemission:table [
+		label="mission_id=id"];
+	nodeformation:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodelangue_candidat:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodelangue_candidat:cols -> nodectrl_langue:table [
+		label="langue=langue"];
+	nodemots_candidat:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodemots_candidat:cols -> nodemots:table [
+		label="mot=mot"];
+	nodemots_formation:cols -> nodeformation:table [
+		label="formation_id=id"];
+	nodemots_formation:cols -> nodemots:table [
+		label="mot=mot"];
+	nodemots_parcour:cols -> nodeparcour:table [
+		label="parcour_id=id"];
+	nodemots_parcour:cols -> nodemots:table [
+		label="mot=mot"];
+	nodeparcour:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodetableau_chasse:cols -> nodemission:table [
+		label="mission_id=id"];
+	nodetableau_chasse:cols -> nodecandidat:table [
+		label="candidat_id=id"];
+	nodetache:cols -> nodeutilisateur:table [
+		label="affecte_a_id=id"];
+	nodetache:cols -> nodeutilisateur:table [
+		label="affecte_par_id=id"];
+	nodeuser_group:cols -> nodeutilisateur:table [
+		label="utilisateur_id=id"];
+	nodeuser_group:cols -> nodegroupe:table [
+		label="groupe_id=id"];
+}

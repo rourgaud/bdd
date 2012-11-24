@@ -1,0 +1,81 @@
+body {
+    /*background: #000000;*/
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    background: #333;
+}
+
+.logo img {
+    float: left;
+    padding: 10px 25px;
+}
+
+h1 {
+    float: left;
+}
+
+.app_title {
+    float: left;
+    color: #fff;
+    font-size: 1.4em;
+}
+
+#header ul {
+    float: right;
+    height: 80px;
+    background: #333;
+}
+
+#header li {
+    float: left;
+    margin: 0 10px;
+    line-height: 80px;
+    list-style: none;
+}
+
+#header li a {
+    color: #fff;
+}
+
+#header li a:hover {
+    text-decoration: none;
+}
+
+#content {
+    padding: 25px;
+}
+
+#footer {
+    background: #333;
+    color: #ccc;
+    text-align: center;
+}
+
+.separator {
+    border-bottom: 1px solid #000;
+    margin-bottom: 1.5em;
+}
+
+.form_stat  {
+    width: 980px;
+    margin: auto;
+}
+
+.plaquette {
+    width: 980px;
+    margin: auto;
+}
+
+.p_date {
+    text-align: right;
+}
+
+.graph {
+    text-align: center;
+}
