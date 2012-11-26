@@ -14,8 +14,15 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        title: "Liste des missions"
+        layout: stacked
+        display: [id, client, intituleposte, secteur, fonction]
+        params:  |
+          <b>%%client%%</b> - %%secteur%%
+          <br />%%intituleposte%% - <em>%%fonction%%<em>
       filter:  ~
       form:    ~
-      edit:    ~
+      edit:
+        title: "Modifier la mission %%client%% - %%intituleposte%%"
       new:     ~

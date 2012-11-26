@@ -1,3 +1,21 @@
+candidat:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Candidat
+    module:               candidat
+    prefix_path:          /candidat
+    column:               id
+    with_wildcard_routes: true
+
+tableau_chasse:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TableauChasse
+    module:               tableau_chasse
+    prefix_path:          /tableau_chasse
+    column:               Array
+    with_wildcard_routes: true
+
 mission:
   class: sfDoctrineRouteCollection
   options:
